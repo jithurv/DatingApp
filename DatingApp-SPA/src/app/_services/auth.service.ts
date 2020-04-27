@@ -12,7 +12,6 @@ export class AuthService {
   login(model: any) {
     const returnValue = this.http.post(this.baseurl + 'login', model).pipe(
       map((response: any) => {
-        debugger;
         if (response != null) {
           localStorage.setItem('token', response.token);
         }
