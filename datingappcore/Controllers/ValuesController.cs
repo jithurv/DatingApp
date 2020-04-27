@@ -5,60 +5,49 @@ using System.Threading.Tasks;
 using datingappcore.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace datingappcore.Controllers
-{
-    [Route("api/[controller]/[action]")]
+namespace datingappcore.Controllers {
+    [Route ("api/[controller]/[action]")]
     [ApiController]
-    public class ValuesController : ControllerBase
-    {
+    public class ValuesController : ControllerBase {
         // GET api/values
         [HttpGet]
-        public ActionResult<List<GetClassValues>> Get()
-        {
-            var retrunvalue=new List<GetClassValues>();
-            var classVal1=new GetClassValues
-            {
-                Id=1,
-                Name="value 1"
-            };var classVal2=new GetClassValues
-            {
-                Id=2,
-                Name="value 2"
-            };var classVal3=new GetClassValues
-            {
-                Id=3,
-                Name="value 3"
+        public ActionResult<List<GetClassValues>> Get () {
+            var retrunvalue = new List<GetClassValues> ();
+            var classVal1 = new GetClassValues {
+                Id = 1,
+                Name = "value 1"
             };
-            retrunvalue.Add(classVal1);
-            retrunvalue.Add(classVal2);
-            retrunvalue.Add(classVal3);
+            var classVal2 = new GetClassValues {
+                Id = 2,
+                Name = "value 2"
+            };
+            var classVal3 = new GetClassValues {
+                Id = 3,
+                Name = "value 3"
+            };
+            retrunvalue.Add (classVal1);
+            retrunvalue.Add (classVal2);
+            retrunvalue.Add (classVal3);
 
             return retrunvalue;
         }
-       
+
         // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
+        [HttpGet ("{id}")]
+        public ActionResult<string> Get (int id) {
             return "value";
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        public void Post ([FromBody] string value) { }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        [HttpPut ("{id}")]
+        public void Put (int id, [FromBody] string value) { }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        [HttpDelete ("{id}")]
+        public void Delete (int id) { }
     }
 }
